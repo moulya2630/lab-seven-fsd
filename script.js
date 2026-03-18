@@ -7,8 +7,9 @@ async function getNews() {
   container.innerHTML = "Loading...";
 
   try {
-    const response = await fetch(
-      "https://newsapi.org/v2/top-headlines?country=in&apiKey=7fbc49bbef8de37a418b785f841c7a10"
+      const response = await fetch(
+  "https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=10&token=YOUR_API_KEY"
+);
     );
 
     const data = await response.json();
