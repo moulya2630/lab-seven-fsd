@@ -1,4 +1,4 @@
-cconst button = document.querySelector("button");
+const button = document.querySelector("button");
 const container = document.querySelector("#news");
 
 button.addEventListener("click", getNews);
@@ -21,11 +21,6 @@ async function getNews() {
       container.appendChild(p);
     });
 
-  } catch (error) {
-    container.innerHTML = "Error fetching news";
-    console.log(error);
-  }
-}
   } catch (error) {
     container.innerHTML = "Error fetching news";
     console.log(error);
