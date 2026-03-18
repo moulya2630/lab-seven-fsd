@@ -1,8 +1,3 @@
-const button = document.querySelector("button");
-const container = document.querySelector("#news");
-
-button.addEventListener("click", getNews);
-
 async function getNews() {
   container.innerHTML = "Loading...";
 
@@ -10,6 +5,10 @@ async function getNews() {
     const response = await fetch(
       "https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=10&token=7fbc49bbef8de37a418b785f841c7a10"
     );
+
+    if (!response.ok) {
+      throw new Error("API not working");
+    }
 
     const data = await response.json();
 
@@ -22,7 +21,7 @@ async function getNews() {
     });
 
   } catch (error) {
-    container.innerHTML = "Error fetching news";
-    console.log(error);
+    container.innerHTML = "Error loading news 😢";
+    console.error(error);
   }
 }
