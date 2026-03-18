@@ -1,13 +1,15 @@
+
+
 async function getNews() {
   container.innerHTML = "Loading...";
 
   try {
     const response = await fetch(
-      "https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=10&token=7fbc49bbef8de37a418b785f841c7a10"
+      "https://gnews.io/api/v4/top-headlines?lang=en&country=in&max=10&token=YOUR_API_KEY"
     );
 
     if (!response.ok) {
-      throw new Error("API not working");
+      throw new Error("Failed");
     }
 
     const data = await response.json();
