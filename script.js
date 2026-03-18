@@ -8,7 +8,7 @@ async function getNews() {
 
   try {
     const response = await fetch(
-      "https://newsapi.org/v2/top-headlines?country=in&apiKey=14458480cd214f44b9cd3b412f35d468"
+      "https://newsapi.org/v2/top-headlines?country=in&apiKey=7fbc49bbef8de37a418b785f841c7a10"
     );
 
     const data = await response.json();
